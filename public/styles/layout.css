@@ -26,25 +26,79 @@ body {
   font-family: 'Bungee', sans-serif;
 }
 
-main {
-  width: 90%;
-  padding-right: 2em;
-  flex-direction: column;
-  align-items: center;
-}
-
-button {
-  background-color: red;
-  border: none;
-  color: white;
-}
-
-
-
-
-
 
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+  width: 90%;
+  margin: auto;
+  
+}
+
+.head {
+  padding-right: 2em;
+}
+.new-tweet{
+  padding-right: 3em;
+}
+
+article{
+  width: 80%;
+  border-style: solid;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+article:hover{
+  width: 80%;
+  border-style: solid;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  box-shadow: 5px 10px #888888;
+}
+
+.tweet-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-user{
+  padding-top: 1em;
+}
+
+.username{
+  
+  opacity: 20%;
+}
+
+.tweet{
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+}
+
+.bottem-tweet{
+  display: flex;
+  justify-content: flex-end
+}
+.fa-flag:hover{
+  color: aqua;
+}
+.fa-retweet:hover{
+  color: aqua;
+}
+.fa-heart:hover{
+  color: red;
+}
+
+
+
+
+
