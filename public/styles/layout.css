@@ -15,10 +15,35 @@ html {
  */
 
 body {
+  width: 100%;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
+
+.tweeter-font {
+  font-family: 'Bungee', sans-serif;
+}
+
+main {
+  width: 90%;
+  padding-right: 2em;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: red;
+  border: none;
+  color: white;
+}
+
+
+
+
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
