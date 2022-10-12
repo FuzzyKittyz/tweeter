@@ -16,6 +16,13 @@
   border-bottom: 5px solid black;
 }
 
-.counter {
-  align-items: flex-end;
+.bottem-new-tweet{
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: red;
+  border: none;
+  color: white;
 }

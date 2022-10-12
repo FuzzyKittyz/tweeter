@@ -75,11 +75,11 @@ article:hover{
 
 .username{
   
-  opacity: 20%;
+  opacity: 40%;
 }
 
 .tweet{
-  text-decoration: underline;
+  border-bottom: 4px solid black;
   display: flex;
   justify-content: center;
 }
