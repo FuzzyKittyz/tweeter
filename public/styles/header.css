@@ -13,3 +13,13 @@ header {
   color: #FFFFFF;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+@media (min-width: 1024px) {
+  header {
+    margin-top:190px;
+    margin-left: 50px;
+    float: left;
+    width: 30vw;
+    padding: 3em;
+  }
+}

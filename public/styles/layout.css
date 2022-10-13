@@ -97,6 +97,15 @@ article:hover{
 .fa-heart:hover{
   color: red;
 }
+@media (min-width: 1024px) {
+  main {
+    margin-top: 140px;
+    margin-right: 50px;
+    width: 50vw;
+    float: right;
+    padding-top: 3em;
+  }
+}
 
 
 
