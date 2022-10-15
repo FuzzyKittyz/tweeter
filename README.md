@@ -16,3 +16,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Photos
+!['Posting a Tweet'](https://github.com/FuzzyKittyz/tweeter/blob/master/docs/Tweet.png)
+!['Trying to post a tweet with to many characters'](https://github.com/FuzzyKittyz/tweeter/blob/master/docs/Show:hide.png)
+!['Responsive Design'](https://github.com/FuzzyKittyz/tweeter/blob/master/docs/Responsive%20Design.png)
