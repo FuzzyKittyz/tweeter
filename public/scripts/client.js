@@ -95,6 +95,7 @@ $(document).ready(function() {
       loadtweets(); //loads the tweet from /tweet
     });
     document.getElementById('tweet-form').reset();//resets the form after the process is over
+    document.getElementById('counter').reset();//resets the char counter
   });
 });
 
