@@ -38,21 +38,21 @@ $(document).ready(function() {
     data.append(htmlMarkup);
     return data;
   };
-  //function that goes throught the tweets object to get the individual tweets and their keys and vlaues
+  //function that loops the tweets object to get the individual tweets and their keys and vlaues
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
-      $('#tweet-container').prepend(createTweetElement(tweet));
+      $('#tweet-container').prepend(createTweetElement(tweet)); //calls the createtweetelement function on each tweet in the tweets object and prepends it to the tweet container section
     }
   };
 
 
-  //function that takes loads the tweets using render tweets and using the information gather from /tweets using ajax
+  //function that loads the tweets using render tweets and using the information gathered from the /tweets page
   const loadtweets = function() {
     $.ajax('/tweets', {method: 'GET'}).then(function(loadedtweets) {
       renderTweets(loadedtweets);
     });
   };
-  loadtweets();
+  loadtweets();// this loads the initial tweets 
 
   //jquery to handle the submit from the text area on the site
   $('#tweet-form').submit(function(event) {
@@ -89,8 +89,8 @@ $(document).ready(function() {
       document.getElementById('tweet-form').reset();
       return;
     }
-    let ser = ($('#tweet-form').serialize()); //serializes the tweetform
-    $.post('/tweets',ser, function() {
+    let ser = ($('#tweet-form').serialize()); //serializes the form text 
+    $.post('/tweets',ser, function() { // takes the serialized tweet and sends it to /tweets
       loadtweets(); //loads the tweet from /tweet
     });
     document.getElementById('tweet-form').reset();//resets the form after the process is over
