@@ -40,6 +40,7 @@
       </div>
     </nav>
     <header>
+      <!-- Where your avatar and name go-->
       <div class="avatar">
           <img src="/images/profile-hex.png"> 
       </div>
@@ -53,18 +54,24 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <!--Location in which you type your tweets-->
         <h2 class="head">Compose Tweet</h2>
-        <h3 id="show-hide">You have entered to much shit</h3>
-        <script>document.getElementById('show-hide').style.display = 'none'</script>
+         <!--Messages that are hidden by default and shown when the statement is true-->
+        <h3 id="show-hide1" class="show-hide">You have exceeded the maximum char count!</h3>
+        <h3 id="show-hide2" class="show-hide"> No Tweet has been typed!</h3>
+        <!--Script that actually hides the message-->
+        <script>document.getElementById('show-hide1').style.display = 'none'</script>
+        <script>document.getElementById('show-hide2').style.display = 'none'</script>
         <form class="new-tweet" id="tweet-form" method="POST" action="/tweets/">
+           <!--Form that handles the text you type-->
           <label for="tweet-text">What are you humming about?</label>
           <textarea class="text" name="text" id="tweet-text"></textarea>
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter" id="counter "for="tweet-text">140</output>
+          <output name="counter" class="counter" id="counter"for="tweet-text">140</output>
         </form>
       </section>
       <section id="tweet-container">
-      
+       <!--This is where the html for the tweets will be put using jquery -->
     </section>
     
     </main>
