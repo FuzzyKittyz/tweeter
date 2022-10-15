@@ -57,6 +57,7 @@ $(document).ready(function() {
   //jquery to handle the submit from the text area on the site
   $('#tweet-form').submit(function(event) {
     event.preventDefault(); //prevents it from doing the default behaviour (loading another page etc)
+    $( "article" ).remove(); //was reloading all the tweets again so everytime remove the article element and reload the tweets obj. Not a great fix but a fix
      
     //if statement checking that the char counter does not pass into the neg
     //if it does it shows the h3 that says there are too many char
