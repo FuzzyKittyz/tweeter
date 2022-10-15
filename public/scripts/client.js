@@ -16,8 +16,9 @@ $(document).ready(function() {
 
   //function that takes object values and makes html elements to display on the website (the tweets)
   const createTweetElement = function(tweet) {
-    let $tweet = $('<article>')
-     //html markup to display on the site
+    //setting up data var which will encompass all of the html markup in an article elm
+    let data = $('<article>');
+    //html markup to display on the site
     let htmlMarkup = `
     <div class="tweet-header">
       <img src='${tweet.user.avatars}' class="fa-user">
@@ -32,69 +33,69 @@ $(document).ready(function() {
       <i class="fa-solid fa-flag" class="flag"></i>
       <i class="fa-solid fa-retweet" class="retweet"></i>
       <i class="fa-solid fa-heart" class="heart"></i>
-    </div>`
-    //appening it to $tweet (article element)
-    $tweet.append(htmlMarkup);
-    return $tweet;
-  }
- //function that goes throught the tweets object to get the individual tweets and their keys and vlaues
+    </div>`;
+    //appening html markup to data (article element)
+    data.append(htmlMarkup);
+    return data;
+  };
+  //function that goes throught the tweets object to get the individual tweets and their keys and vlaues
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
-      let $tweet = createTweetElement(tweet)
-      $('#tweet-container').prepend($tweet)
+      $('#tweet-container').prepend(createTweetElement(tweet));
     }
   };
 
 
- //function that takes loads the tweets using render tweets and using the information gather from /tweets using ajax
-  const loadtweets = function(){
-    $.ajax('/tweets', {method: 'GET'}).then(function(loadedtweets){
-      renderTweets(loadedtweets)
-    })
-  }
-  loadtweets()
+  //function that takes loads the tweets using render tweets and using the information gather from /tweets using ajax
+  const loadtweets = function() {
+    $.ajax('/tweets', {method: 'GET'}).then(function(loadedtweets) {
+      renderTweets(loadedtweets);
+    });
+  };
+  loadtweets();
 
-//jquery to handle the submit from the text area on the site 
- $('#tweet-form').submit(function(event){
-      event.preventDefault(); //prevents it from doing the default behaviour (loading another page etc)
+  //jquery to handle the submit from the text area on the site
+  $('#tweet-form').submit(function(event) {
+    event.preventDefault(); //prevents it from doing the default behaviour (loading another page etc)
      
-       //if statement checking that the char counter does not pass into the neg
-       //if it does it shows the h3 that says there are too many char 
-      if ($('#tweet-form').children('.counter').val() < 0){
-        document.getElementById('show-hide1').style.display = 'block'
-        setTimeout(() => {
-          document.getElementById('show-hide1').style.display = 'none'; //hides the element after 3s using set timeout
-        }, "3000")
-        document.getElementById('tweet-form').reset() //resets the form 
-        return //returns from the function 
-      }
-       //if statments checking if the text feild is empty 
-       //shows message if it is and hides it using timeout
-      if($('#tweet-form').serialize() === 'text='){
-        document.getElementById('show-hide2').style.display = 'block'
-        setTimeout(() => {
-          document.getElementById('show-hide2').style.display = 'none';
-        }, "3000")
-        document.getElementById('tweet-form').reset()
-        return 
-       }
+    //if statement checking that the char counter does not pass into the neg
+    //if it does it shows the h3 that says there are too many char
+    if ($('#tweet-form').children('.counter').val() < 0) {
+      document.getElementById('show-hide1').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('show-hide1').style.display = 'none'; //hides the element after 3s using set timeout
+      }, "3000");
+      document.getElementById('tweet-form').reset(); //resets the form
+      return; //returns from the function
+    }
+    //if statments checking if the text feild is empty
+    //shows message if it is and hides it using timeout
+    if ($('#tweet-form').serialize() === 'text=') {
+      document.getElementById('show-hide2').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('show-hide2').style.display = 'none';
+      }, "3000");
+      document.getElementById('tweet-form').reset();
+      return;
+    }
 
-
-      if($('#tweet-form').serialize() === 'text=%0D%0A'){
-        document.getElementById('show-hide2').style.display = 'block'
-        setTimeout(() => {
-          document.getElementById('show-hide2').style.display = 'none';
-        }, "3000")
-        document.getElementById('tweet-form').reset()
-        return 
-      }
-      let ser = ($('#tweet-form').serialize()) //serializes the tweetform
-      $.post('/tweets',ser, function(){
-        loadtweets() //loads the tweet using a post request 
-      })
-      document.getElementById('tweet-form').reset();//resets the form after the process is over
-      });
-    
+    //if statments checking if the text feild is empty
+    //shows message if it is and hides it using timeout
+    if ($('#tweet-form').serialize() === 'text=%0D%0A') {
+      document.getElementById('show-hide2').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('show-hide2').style.display = 'none';
+      }, "3000");
+      document.getElementById('tweet-form').reset();
+      return;
+    }
+    let ser = ($('#tweet-form').serialize()); //serializes the tweetform
+    $.post('/tweets',ser, function() {
+      loadtweets(); //loads the tweet from /tweet
+    });
+    document.getElementById('tweet-form').reset();//resets the form after the process is over
+    $('counter').text = ('140'); //Sets the counter text back to 140 as .reset does not reset it
+  });
 });
 
 
