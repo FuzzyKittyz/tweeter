@@ -1,3 +1,7 @@
+/*
+* all the css that deals with the html element header 
+*/
+
 header {
   height: 620px;
   width: 100%;
@@ -9,11 +13,17 @@ header {
   background-image: url('/images/45-degree-fabric-dark.png');
 }
 
+/*
+*name class specific css
+*/
 .name{
   color: #FFFFFF;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/*
+*css that deals with different sizes of windows. specificly css for anything starting at 1024px and higher
+*/
 @media (min-width: 1024px) {
   header {
     margin-top:190px;

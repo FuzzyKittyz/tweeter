@@ -32,11 +32,17 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ /*
+ css dealing with main
+ */
  main {
   width: 90%;
   margin: auto;
   
 }
+/*
+class specific css
+*/
 
 .head {
   padding-right: 2em;
@@ -45,24 +51,42 @@ body {
   padding-right: 3em;
 }
 
+.counter{
+  font-family: 'Bungee', sans-serif;
+}
+
+/*
+article css
+*/
+
 article{
   width: 80%;
   border-style: solid;
+  border-width: thick;
   border-color: black;
   display: flex;
   flex-direction: column;
   margin: auto;
 }
 
+/*
+article css but for when your mouse hovers above the element on the website
+*/
+
 article:hover{
   width: 80%;
   border-style: solid;
+  border-width: thick;
   border-color: black;
   display: flex;
   flex-direction: column;
   margin: auto;
   box-shadow: 5px 10px #888888;
 }
+
+/*
+class specific css
+*/
 
 .tweet-header{
   display: flex;
@@ -88,6 +112,9 @@ article:hover{
   display: flex;
   justify-content: flex-end
 }
+/* 
+class specific hovering css
+*/
 .fa-flag:hover{
   color: aqua;
 }
@@ -97,6 +124,13 @@ article:hover{
 .fa-heart:hover{
   color: red;
 }
+
+.show-hide{
+  color: red;
+}
+/*
+*css that deals with different sizes of windows. specificly css for anything starting at 1024px and higher
+*/
 @media (min-width: 1024px) {
   main {
     margin-top: 140px;
