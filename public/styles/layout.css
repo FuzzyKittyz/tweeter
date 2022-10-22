@@ -67,7 +67,10 @@ article{
   display: flex;
   flex-direction: column;
   margin: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
+
 
 /*
 article css but for when your mouse hovers above the element on the website
@@ -90,7 +93,12 @@ class specific css
 
 .tweet-header{
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  align-content: center;
+  height: 2em;
+  font-size: 20px;
 }
 
 .fa-user{
@@ -100,17 +108,23 @@ class specific css
 .username{
   
   opacity: 40%;
+  padding-left: 12em;
 }
 
 .tweet{
   border-bottom: 4px solid black;
   display: flex;
   justify-content: center;
+  
 }
 
 .bottem-tweet{
   display: flex;
   justify-content: flex-end
+}
+
+.tweet-container{
+  margin-bottom: 30px ;
 }
 /* 
 class specific hovering css

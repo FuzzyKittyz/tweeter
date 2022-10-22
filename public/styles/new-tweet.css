@@ -3,6 +3,7 @@ css dealing with everything for the tweets
 */
 
 .new-tweet{
+  width: auto;
   padding-left: 3em;
   display: flex;
   flex-direction: column;
@@ -14,15 +15,19 @@ css dealing with everything for the tweets
 }
 
 .text{
+  width: 200%;
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
   border-bottom: 5px solid black;
 }
 
-.bottem-new-tweet{
+.bottem-text{
   display: flex;
+  flex-direction: row;
+  width: 200%;
   justify-content: space-between;
+  margin-top: 5px;
 }
 
 button {
