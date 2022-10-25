@@ -48,10 +48,15 @@ $(document).ready(function() {
 
   //function that loads the tweets using render tweets and using the information gathered from the /tweets page
   const loadtweets = function() {
-    $.ajax('/tweets', {method: 'GET'}).then(function(loadedtweets) {
+    $.ajax('/tweets', {method: 'GET'})
+     .then(function(loadedtweets) {
       renderTweets(loadedtweets);
+    })
+    .catch((err) => {// catches any errors from get request
+      console.log('Error', err);
     });
-  };
+   };
+  
   loadtweets();// this loads the initial tweets 
 
   //jquery to handle the submit from the text area on the site
@@ -95,9 +100,12 @@ $(document).ready(function() {
     let serialize = ($('#tweet-form').serialize()); //serializes the form text 
     $.post('/tweets',serialize, function() { // takes the serialized tweet and sends it to /tweets
       loadtweets(); //loads the tweet from /tweet
+    })
+    .catch((err) => { //catches any errors from post request
+      console.log('Error', err);
     });
     document.getElementById('tweet-form').reset();//resets the form after the process is over
-    document.getElementById('counter').reset();//resets the char counter
+    $('.counter').text(140);//resets the char counter
   });
 });
 
